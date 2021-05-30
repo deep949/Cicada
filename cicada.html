@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Download any book here.</title>
+        <h1 style="text-align:center;">Heading</h1>
+        <p>&#128512;</p>
+	<style>
+	.container {
+	  position: relative;
+	  width: 100%;
+	  max-width: 400px;
+	}
+
+	
+	
+	.container .btn {
+	  position: absolute;
+	  top: 15%;
+	  left: 70%;
+	  background-color: #555;
+	  color: white;
+	  font-size: 16px;
+	  padding: 10px 24px;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  text-align: center;
+	}
+
+	.container .btn1{
+	  position: absolute;
+	  top: 35%;
+	  left: 70%;
+	  background-color: #555;
+	  color: white;
+	  font-size: 16px;
+	  padding: 10px 24px;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  text-align: center;
+	}
+
+	.container .btn2{
+	  position: absolute;
+	  top: 55%;
+	  left: 70%;
+	  background-color: #555;
+	  color: white;
+	  font-size: 16px;
+	  padding: 10px 24px;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  text-align: center;
+	}
+
+	.container .btn:hover {
+	  background-color: black;
+	}
+
+    .container .btn1:hover {
+	  background-color: black;
+	}
+
+    .container .btn2:hover {
+	  background-color: black;
+	}
+
+    
+	</style>
+    </head>
+    
+    <body style="background-color:powderblue;">
+
+
+		<div class = "box">
+			<button id = "search" type="button">Search</button>
+			<input type="text" id = "book" placeholder="Search the book !!" >
+		</div>
+
+		<script>
+			document.querySelector("search").addEventListener("click",
+		function(event) {
+			var input, uniform_text, unorderedList, listItems, store_div, textValue;
+			var flag = 0;
+			input = document.querySelector("book"); // Id given to input tag
+			uniform_text = input.value.toLowerCase();
+			unorderedList = document.getElementById("myUL"); // Id given to unordered list,ul
+			listItems = unorderedList.getElementsByTagName("li");
+
+			for (var i = 0; i < listItems.length; i++) {
+				store_div = listItems[i].getElementsByTagName("p")[0];
+				textValue = store_div.textContent;
+				if (textValue.toLowerCase().indexOf(uniform_text) > -1) {
+					listItems[i].style.display = ""; // if does not works, use this -> listItems[i].style.display = "";
+					flag++;
+				} 
+				else {
+					listItems[i].style.display = "none";
+				}
+			}
+			// if no such search found
+			if (flag == 0) {
+				document.getElementById("showEmpty").textContent = "No such book available. Sorry!!";
+				document.getElementById("showEmpty").style.display = "";
+			}
+			// to hide "No such book available. Sorry!!" when found a book.
+			else {
+				document.getElementById("showEmpty").style.display = "none";
+			}
+	})
+		</script>
+
+        <h2 style="text-align:left">THE LIBRARY</h2>
+        <p><em><u>We love reading</u></em></p>
+        <p>We have created a fictional website.</p>
+
+	<div class="container">
+		<p style="align-items: center;">Why Tongues</p>
+	  <img src = "https://bit.ly/3vxaIl3" width="180" height="220" alt = "Example photo" >
+	    <aside>  
+            <button class="btn" type="button" onclick="location.href = 'https://bit.ly/34tdFaI'">Open the PDF</button>
+            <button class="btn1" type="button" onclick="location.href = 'https://amzn.to/3i6hD0L'">Buy now</button>
+            <button class="btn2" type="button" onclick="location.href = 'https://www.google.co.in/'">Description</button>
+        </aside>
+	</div>
+        <hr>
+
+	<div class="container">
+		<p>100 way to motivate yourself</p>
+		<img src = "https://bit.ly/3uscp1P" width="180" height="220" alt = "Example photo" >
+			<aside>  
+				<button class="btn" type="button" onclick="location.href = 'https://bit.ly/2SGI5TV'">Open the PDF</button>
+				<button class="btn1" type="button" onclick="location.href = 'https://amzn.to/3wHEsvP'">Buy now</button>
+				<button class="btn2" type="button" onclick="location.href = 'https://www.google.co.in/'">Description</button>
+			</aside>
+	</div>
+		<hr>
+
+	<div class="container">
+		<p style="align-items: center;">21 DAYS OF EFFECTIVE COMMUNICATION</p>
+		<img src = "https://bit.ly/2Tq8xSm" width="180" height="220" alt = "Example photo" >
+			<aside>  
+				<button class="btn" type="button" onclick="location.href = 'https://bit.ly/2Ts9PMH'">Open the PDF</button>
+				<button class="btn1" type="button" onclick="location.href = 'https://amzn.to/3i1Bi1L'">Buy now</button>
+				<button class="btn2" type="button" onclick="location.href = 'https://www.google.co.in/'">Description</button>
+			</aside>
+		</div>
+	<hr>
+
+	<div class="container">
+		<p style="align-items: center;">1984</p>
+		<img src = "https://bit.ly/3fx52C9" width="180" height="220" alt = "Example photo" >
+			<aside>  
+				<button class="btn" type="button" onclick="location.href = 'https://bit.ly/3c2t4CS'">Open the PDF</button>
+				<button class="btn1" type="button" onclick="location.href = 'https://amzn.to/3yOoXUE'">Buy now</button>
+				<button class="btn2" type="button" onclick="location.href = 'https://www.google.co.in/'">Description</button>
+			</aside>
+		</div>
+	<hr>
+
+	<div class="container">
+		<p style="align-items: center;">CRITICAL THINKING</p>
+		<img src = "https://bit.ly/3fX9jh4" width="180" height="220" alt = "Example photo" >
+			<aside>  
+				<button class="btn" type="button" onclick="location.href = 'https://bit.ly/3wAJTN0'">Open the PDF</button>
+				<button class="btn1" type="button" onclick="location.href = 'https://amzn.to/3hZRReH'">Buy now</button>
+				<button class="btn2" type="button" onclick="location.href = 'https://www.google.co.in/'">Description</button>
+			</aside>
+		</div>
+	<hr>
+		
+	
+
+    </body>
+</html>
